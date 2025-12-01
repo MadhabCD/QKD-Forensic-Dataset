@@ -13,6 +13,23 @@ This repository contains a realistic and physics-informed Quantum Key Distributi
 ![Research Ready](https://img.shields.io/badge/Research-Publication%20Ready-yellowgreen)
 ![Open Source](https://img.shields.io/badge/Dataset-Open%20Source-success)
 ![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/QKD-Forensic-Dataset?style=social)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Dataset Size](https://img.shields.io/badge/Dataset-50k%20samples-brightgreen)
+![Time Series](https://img.shields.io/badge/Version-LSTM%20timeseries-blueviolet)
+![Domain](https://img.shields.io/badge/Domain-Quantum%20Forensics-purple)
+![QKD](https://img.shields.io/badge/QKD-Security%20Dataset-blue)
+![ML Ready](https://img.shields.io/badge/ML-Ready-green)
+![DL Ready](https://img.shields.io/badge/Deep%20Learning-LSTM%20Compatible-orange)
+![Format](https://img.shields.io/badge/Format-CSV-lightgrey)
+![Research Ready](https://img.shields.io/badge/Research-Publication%20Ready-yellowgreen)
+![Open Source](https://img.shields.io/badge/Dataset-Open%20Source-success)
+
+![Downloads](https://img.shields.io/github/downloads/YOUR_USERNAME/QKD-Forensic-Dataset/total)
+![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/QKD-Forensic-Dataset)
+![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/QKD-Forensic-Dataset)
+![PRs](https://img.shields.io/github/issues-pr/YOUR_USERNAME/QKD-Forensic-Dataset)
+
+[![HuggingFace](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/YOUR_USERNAME/QKD-Forensic-Dataset)
 
 ## Contents
 - **full_qkd_dataset_realistic_50000.csv**
