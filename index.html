@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QF-LOG: Quantum Forensic Dataset for QKD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#0a0a12; color:#eee; }
+    header { background:#111827; padding:20px; text-align:center; }
+    h1 { margin:0; font-size:28px; }
+    main { max-width:960px; margin:20px auto; padding:20px; background:#111827; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,0.5);}
+    a { color:#38bdf8; }
+    code { background:#020617; padding:2px 4px; border-radius:4px; }
+    .badge-row span { display:inline-block; margin:4px 6px; padding:4px 8px; border-radius:12px; background:#1f2937; font-size:12px;}
+    h2 { border-bottom:1px solid #1f2937; padding-bottom:4px;}
+    footer { text-align:center; padding:20px; font-size:12px; color:#9ca3af;}
+  </style>
+</head>
+<body>
+<header>
+  <h1>QF-LOG: Quantum Forensic Dataset for QKD Networks</h1>
+  <p>By Madhab Chandra Das · Quantum Forensics Framework</p>
+</header>
+<main>
+  <section>
+    <h2>Overview</h2>
+    <p>
+      QF-LOG is a physics-grounded synthetic dataset for forensic analysis of Quantum Key Distribution (QKD) networks.
+      It captures realistic behaviour of four scenarios: <code>normal</code>, <code>intercept_resend</code>,
+      <code>detector_blind</code>, and <code>fiber_tap</code>.
+    </p>
+    <div class="badge-row">
+      <span>50,000 samples (tabular)</span>
+      <span>+ time-series LSTM version</span>
+      <span>4 attack classes</span>
+      <span>QBER · photon_count · latency · abort_flag</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Files</h2>
+    <ul>
+      <li><code>full_qkd_dataset_realistic_50000.csv</code> – main tabular dataset</li>
+      <li><code>qkd_timeseries_lstm_v2.csv</code> – version 2, sequence-format for LSTM/1D-CNN</li>
+      <li><code>dataset_card.md</code> – dataset card (HuggingFace-style)</li>
+      <li><code>README.md</code> – repository level documentation</li>
+      <li><code>supplementary_dataset_description.pdf</code> – PDF description for papers</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Feature Schema</h2>
+    <pre><code>qber           float   Quantum Bit Error Rate per frame
+photon_count   int     Photon detection count
+latency_ms     float   Classical processing latency
+abort_flag     int     0 = OK, 1 = Abort
+label          string  normal / intercept_resend / detector_blind / fiber_tap
+session_id     (v2)    integer time-series session index
+frame_index    (v2)    integer frame position in session</code></pre>
+  </section>
+
+  <section>
+    <h2>Citation</h2>
+    <p>If you use QF-LOG in your research, please cite:</p>
+    <pre><code>Das, M.C., "QF-LOG: A Machine Learning Forensic Dataset for QKD Networks", 2025.</code></pre>
+  </section>
+
+  <section>
+    <h2>Licensing</h2>
+    <p>
+      The dataset is released under a permissive license suitable for academic and commercial use.
+      See <code>LICENSE</code> for details (MIT / Apache-2.0 / CC-BY-4.0 recommendations).
+    </p>
+  </section>
+</main>
+<footer>
+  &copy; 2025 Madhab Chandra Das · Quantum Forensics Framework (QF-LOG)
+</footer>
+</body>
+</html>
