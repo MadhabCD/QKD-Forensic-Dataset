@@ -2,6 +2,17 @@
 
 This repository contains a realistic and physics-informed Quantum Key Distribution (QKD) forensic dataset.
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Dataset Size](https://img.shields.io/badge/Dataset-50k%20samples-brightgreen)
+![Time Series](https://img.shields.io/badge/Version-LSTM%20timeseries-blueviolet)
+![Domain](https://img.shields.io/badge/Domain-Quantum%20Forensics-purple)
+![QKD](https://img.shields.io/badge/QKD-Security%20Dataset-blue)
+![ML Ready](https://img.shields.io/badge/ML-Ready-green)
+![DL Ready](https://img.shields.io/badge/Deep%20Learning-LSTM%20Compatible-orange)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Format](https://img.shields.io/badge/Format-CSV-lightgrey)
+![Research Ready](https://img.shields.io/badge/Research-Publication%20Ready-yellowgreen)
+![Open Source](https://img.shields.io/badge/Dataset-Open%20Source-success)
+![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/QKD-Forensic-Dataset?style=social)
 
 ## Contents
 - **full_qkd_dataset_realistic_50000.csv**
