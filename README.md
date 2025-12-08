@@ -3,6 +3,7 @@
  QKD Forensic Dataset
 
 This repository contains a realistic and physics-informed Quantum Key Distribution (QKD) forensic dataset.
+![Stars](https://img.shields.io/github/stars/MadhabCD/QKD-Forensic-Dataset)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Dataset Size](https://img.shields.io/badge/Dataset-50k%20samples-brightgreen)
 ![Time Series](https://img.shields.io/badge/Version-LSTM%20timeseries-blueviolet)
@@ -65,6 +66,57 @@ import pandas as pd
 df = pd.read_csv("full_qkd_dataset_realistic_50000.csv")
 print(df.head())
 ```
+
+# QF-LOG: Quantum Forensic Dataset for QKD Networks
+
+This repository contains the official release of the **QKD-Forensic-Dataset**, a physics-informed dataset designed for forensic analysis and attack detection in Quantum Key Distribution (QKD) networks.
+
+---
+
+## ✅ Dataset Policy (IMPORTANT)
+
+This dataset is a **fixed and authoritative research release**.
+
+⚠️ **Do NOT regenerate the dataset during experiments.**  
+All results reported in the associated publication are based on the dataset files as released in this repository.
+
+The dataset generation scripts are provided **only for transparency and future research extensions**, not for reproducing published results.
+
+✅ For reproducibility:
+- Always use the provided dataset files **as-is**
+- Do not modify, shuffle, or regenerate the data before benchmarking
+
+---
+
+## 📦 Dataset Contents
+
+The dataset represents realistic QKD operational log records with four classes:
+
+| Class | Description |
+|--------|------------|
+| normal | Normal QKD operation |
+| partial_intercept_resend | Partial intercept–resend attack |
+| detector_blinding | Detector blinding attack |
+| fiber_tap | Passive fiber tapping |
+
+Each record contains the following features:
+
+| Feature | Description |
+|---------|-------------|
+| QBER | Quantum Bit Error Rate |
+| photon_count | Number of detected photons |
+| latency_ms | Controller processing delay |
+| abort_flag | Protocol abort indicator (0/1) |
+
+Total samples: **50,000** (Balanced across classes)
+
+---
+
+## 🔬 Reproducibility Statement
+
+All experiments in the paper are reproducible using:
+
+
 
 ## Citation
 
