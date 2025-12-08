@@ -31,7 +31,7 @@ This repository contains a realistic and physics-informed Quantum Key Distributi
 ![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/QKD-Forensic-Dataset)
 ![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/QKD-Forensic-Dataset)
 ![PRs](https://img.shields.io/github/issues-pr/YOUR_USERNAME/QKD-Forensic-Dataset)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/[DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)](https://doi.org/10.5281/zenodo.17773084)
 [![HuggingFace](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/YOUR_USERNAME/QKD-Forensic-Dataset)
 
 QF-LOG is a physics-grounded synthetic dataset for attack detection in Quantum Key Distribution (QKD) networks.
