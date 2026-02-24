@@ -1,7 +1,10 @@
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Data License: CC BY 4.0](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-blue.svg)](LICENSE_CC-BY-4.0)
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17773084.svg)](https://doi.org/10.5281/zenodo.17773084)
 
+License
+The dataset files (CSV and any dataset ZIP files) are licensed under CC-BY-4.0.
+The code and scripts in this repository are licensed under the MIT License.
 
 QF-LOG: Quantum Forensic Dataset for QKD Networks
 
