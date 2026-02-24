@@ -1,0 +1,66 @@
+QF-LOG: Quantum Forensic Dataset for QKD Networks
+Data Dictionary
+
+File name
+full_qkd_dataset_realistic_50000.csv
+
+Row meaning
+Each row is one QKD log record representing an observed QKD condition in a realistic setting.
+The row is labeled with one of four classes for forensic and machine learning experiments.
+
+Column 1
+Name: QBER
+Type: float
+Meaning: Quantum Bit Error Rate for the observation.
+Use: Higher values often indicate disturbance in the quantum channel.
+
+Column 2
+Name: photon_count
+Type: integer
+Meaning: Number of detected photons for the observation.
+Use: Abnormal values can indicate loss, manipulation, or detector behavior changes.
+
+Column 3
+Name: latency_ms
+Type: float
+Meaning: Controller or system processing and buffering delay, in milliseconds.
+Important note: This is not optical propagation time in fiber.
+It reflects overhead such as buffering and error correction related processing.
+
+Column 4
+Name: abort_flag
+Type: integer
+Allowed values: 0 or 1
+Meaning: Protocol abort indicator.
+0 means no abort condition.
+1 means abort condition occurred or was triggered.
+
+Column 5
+Name: label
+Type: string
+Meaning: Class label of the observation.
+
+Label values
+normal
+Meaning: Normal QKD operation.
+
+partial_intercept_resend
+Meaning: Partial intercept-resend behavior where only a fraction of qubits are intercepted and resent.
+This can create moderate error and may avoid immediate abort depending on parameters.
+
+detector_blinding
+Meaning: Detector blinding style behavior that manipulates detection conditions.
+This often affects photon_count and may alter QBER patterns.
+
+fiber_tap
+Meaning: Fiber tapping behavior that introduces loss and disturbance.
+This can affect QBER and photon_count and may influence abort conditions.
+
+Class balance
+Total records: 50,000
+Records per class: 12,500
+The dataset is balanced to support fair benchmarking.
+
+Design note about feature overlap
+Feature distributions overlap across classes by design.
+This makes classification more realistic and prevents trivial separation.
