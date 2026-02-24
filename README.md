@@ -18,12 +18,8 @@ QF-LOG is a physics-informed dataset for attack detection and forensic analysis 
 It contains labeled QKD operational log records that can be used for machine learning, benchmarking, and forensic rule testing.
 
 Dataset files
-full_qkd_dataset_realistic_50000.csv
+full_qkd_dataset_realistic_50000_v2.csv
 This is the main dataset file. It contains 50,000 records.
-
-qkd_timeseries_lstm_v2.csv
-This is a time-series formatted version for sequence models such as LSTM and 1D-CNN.
-Use this file only if you need sequential input.
 
 Classes
 The dataset contains four balanced classes.
@@ -32,11 +28,11 @@ Each class has 12,500 records.
 Class names
 normal
 partial_intercept_resend
-detector_blinding
+detector_blind
 fiber_tap
 
 Features in the main CSV
-QBER
+qber
 photon_count
 latency_ms
 abort_flag
@@ -55,11 +51,11 @@ Quick start
 Python example to load the dataset.
 
 import pandas as pd
-df = pd.read_csv("full_qkd_dataset_realistic_50000.csv")
+df = pd.read_csv("full_qkd_dataset_realistic_50000_v2.csv")
 print(df.head())
 
 Suggested scripts to upload to IEEE DataPort
-generate_qkd_dataset_realistic_50000.py
+generate_qkd_dataset_realistic_50000_v2.py
 load_qkd_logs_numeric.py
 train_rf_realistic.py
 train_xgb_realistic.py
