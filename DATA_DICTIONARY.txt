@@ -2,7 +2,7 @@ QF-LOG: Quantum Forensic Dataset for QKD Networks
 Data Dictionary
 
 File name
-full_qkd_dataset_realistic_50000.csv
+full_qkd_dataset_realistic_50000_v2.csv
 
 Row meaning
 Each row is one QKD log record representing an observed QKD condition in a realistic setting.
@@ -63,4 +63,5 @@ The dataset is balanced to support fair benchmarking.
 
 Design note about feature overlap
 Feature distributions overlap across classes by design.
+
 This makes classification more realistic and prevents trivial separation.
