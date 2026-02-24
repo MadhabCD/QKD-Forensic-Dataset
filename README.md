@@ -1,124 +1,79 @@
-# QF-LOG: Quantum Forensic Dataset for QKD Networks
 
- QKD Forensic Dataset
-
-This repository contains a realistic and physics-informed Quantum Key Distribution (QKD) forensic dataset.
-![Stars](https://img.shields.io/github/stars/MadhabCD/QKD-Forensic-Dataset)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Dataset Size](https://img.shields.io/badge/Dataset-50k%20samples-brightgreen)
-![Time Series](https://img.shields.io/badge/Version-LSTM%20timeseries-blueviolet)
-![Domain](https://img.shields.io/badge/Domain-Quantum%20Forensics-purple)
-![QKD](https://img.shields.io/badge/QKD-Security%20Dataset-blue)
-![ML Ready](https://img.shields.io/badge/ML-Ready-green)
-![DL Ready](https://img.shields.io/badge/Deep%20Learning-LSTM%20Compatible-orange)
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Format](https://img.shields.io/badge/Format-CSV-lightgrey)
-![Research Ready](https://img.shields.io/badge/Research-Publication%20Ready-yellowgreen)
-![Open Source](https://img.shields.io/badge/Dataset-Open%20Source-success)
-![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/QKD-Forensic-Dataset?style=social)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Dataset Size](https://img.shields.io/badge/Dataset-50k%20samples-brightgreen)
-![Time Series](https://img.shields.io/badge/Version-LSTM%20timeseries-blueviolet)
-![Domain](https://img.shields.io/badge/Domain-Quantum%20Forensics-purple)
-![QKD](https://img.shields.io/badge/QKD-Security%20Dataset-blue)
-![ML Ready](https://img.shields.io/badge/ML-Ready-green)
-![DL Ready](https://img.shields.io/badge/Deep%20Learning-LSTM%20Compatible-orange)
-![Format](https://img.shields.io/badge/Format-CSV-lightgrey)
-![Research Ready](https://img.shields.io/badge/Research-Publication%20Ready-yellowgreen)
-![Open Source](https://img.shields.io/badge/Dataset-Open%20Source-success)
-
-![Downloads](https://img.shields.io/github/downloads/YOUR_USERNAME/QKD-Forensic-Dataset/total)
-![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/QKD-Forensic-Dataset)
-![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/QKD-Forensic-Dataset)
-![PRs](https://img.shields.io/github/issues-pr/YOUR_USERNAME/QKD-Forensic-Dataset)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17773084.svg)](https://doi.org/10.5281/zenodo.17773084)
 
-[![HuggingFace](https://img.shields.io/badge/Dataset-HuggingFace-yellow.svg)](https://huggingface.co/datasets/YOUR_USERNAME/QKD-Forensic-Dataset)
 
-QF-LOG is a physics-grounded synthetic dataset for attack detection in Quantum Key Distribution (QKD) networks.
+QF-LOG: Quantum Forensic Dataset for QKD Networks
 
-## Contents
+Author
+Madhab Chandra Das
+Sam Houston State University
+ORCID: https://orcid.org/0000-0003-2724-4315
 
-- `full_qkd_dataset_realistic_50000.csv` – main tabular dataset
-- `qkd_timeseries_lstm_v2.csv` – time-series version for LSTM/1D-CNN
-- `dataset_card.md` – dataset card
-- `huggingface_dataset_card.md` – template for HuggingFace Hub
-- `website/index.html` – simple dataset website
-- `supplementary_dataset_description.pdf` – paper-ready dataset description
-- `README.md` – this file
-- `LICENSE_MIT`, `LICENSE_Apache2`, `LICENSE_GPL3`, `LICENSE_CC-BY-4.0` – choose one
+Overview
+QF-LOG is a physics-informed dataset for attack detection and forensic analysis in Quantum Key Distribution (QKD) networks.
+It contains labeled QKD operational log records that can be used for machine learning, benchmarking, and forensic rule testing.
 
-## Attack Classes
-- normal
-- intercept_resend
-- detector_blind
-- fiber_tap
+Dataset files
+full_qkd_dataset_realistic_50000.csv
+This is the main dataset file. It contains 50,000 records.
 
-  ## Features
-- QBER  
-- Photon Count  
-- Latency  
-- Abort Flag  
+qkd_timeseries_lstm_v2.csv
+This is a time-series formatted version for sequence models such as LSTM and 1D-CNN.
+Use this file only if you need sequential input.
 
-## Quick Start
+Classes
+The dataset contains four balanced classes.
+Each class has 12,500 records.
 
-```python
+Class names
+normal
+partial_intercept_resend
+detector_blinding
+fiber_tap
+
+Features in the main CSV
+QBER
+photon_count
+latency_ms
+abort_flag
+
+Important notes
+1) The dataset is synthetic but physics-informed.
+2) Feature ranges overlap across classes on purpose. This avoids an unrealistic “too easy” dataset.
+3) latency_ms represents controller or system processing and buffering delay. It is not optical propagation delay in fiber.
+
+Reproducibility policy
+To reproduce results from the associated paper, use the released dataset files as-is.
+Do not regenerate, shuffle, or modify the released CSV when you compare with published results.
+Dataset generation scripts can be used for transparency and for future extensions, but the released CSV is the reference file for benchmarking.
+
+Quick start
+Python example to load the dataset.
+
 import pandas as pd
 df = pd.read_csv("full_qkd_dataset_realistic_50000.csv")
 print(df.head())
-```
 
-# QF-LOG: Quantum Forensic Dataset for QKD Networks
+Suggested scripts to upload to IEEE DataPort
+generate_qkd_dataset_realistic_50000.py
+load_qkd_logs_numeric.py
+train_rf_realistic.py
+train_xgb_realistic.py
+rf_kfold_realistic.py
+xgb_kfold_realistic.py
+plot_pca_qkd.py
+plot_rf_feature_importance.py
+extract_rules_qkd.py
+rule_based_detector.py
 
-This repository contains the official release of the **QKD-Forensic-Dataset**, a physics-informed dataset designed for forensic analysis and attack detection in Quantum Key Distribution (QKD) networks.
+Links
+Zenodo record
+https://zenodo.org/records/17773084
 
----
+GitHub repository
+https://github.com/MadhabCD/QKD-Forensic-Dataset
 
-## ✅ Dataset Policy (IMPORTANT)
-
-This dataset is a **fixed and authoritative research release**.
-
-⚠️ **Do NOT regenerate the dataset during experiments.**  
-All results reported in the associated publication are based on the dataset files as released in this repository.
-
-The dataset generation scripts are provided **only for transparency and future research extensions**, not for reproducing published results.
-
-✅ For reproducibility:
-- Always use the provided dataset files **as-is**
-- Do not modify, shuffle, or regenerate the data before benchmarking
-
----
-
-## 📦 Dataset Contents
-
-The dataset represents realistic QKD operational log records with four classes:
-
-| Class | Description |
-|--------|------------|
-| normal | Normal QKD operation |
-| partial_intercept_resend | Partial intercept–resend attack |
-| detector_blinding | Detector blinding attack |
-| fiber_tap | Passive fiber tapping |
-
-Each record contains the following features:
-
-| Feature | Description |
-|---------|-------------|
-| QBER | Quantum Bit Error Rate |
-| photon_count | Number of detected photons |
-| latency_ms | Controller processing delay |
-| abort_flag | Protocol abort indicator (0/1) |
-
-Total samples: **50,000** (Balanced across classes)
-
----
-
-## 🔬 Reproducibility Statement
-
-All experiments in the paper are reproducible using:
-
-
-
-## Citation
-
-> Das, M.C., "QF-LOG: A Machine Learning Forensic Dataset for QKD Networks", 2025.
+Citation
+Please cite the dataset using the Zenodo DOI.
+Use the DOI shown on the Zenodo page for the official citation text.
