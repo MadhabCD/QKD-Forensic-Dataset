@@ -6,7 +6,7 @@ License
 The dataset files (CSV and any dataset ZIP files) are licensed under CC-BY-4.0.
 The code and scripts in this repository are licensed under the MIT License.
 
-QF-LOG: Quantum Forensic Dataset for QKD Networks
+## QF-LOG: Quantum Forensic Dataset for QKD Networks
 
 Author
 Madhab Chandra Das
@@ -76,7 +76,8 @@ https://github.com/MadhabCD/QKD-Forensic-Dataset
 Citation
 Please cite the dataset using the Zenodo DOI.
 Use the DOI shown on the Zenodo page for the official citation text.
-
+Full Generator-B robustness resources are available in:
+generator_b.zip
 
 
 ## Generator-B Robustness Validation Extension
