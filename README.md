@@ -99,7 +99,7 @@ Generator-B introduces multiple operational variations and domain-shift factors,
 - noisy QBER behavior
 - overlapping operational class boundaries
 - optional calibration_drift_attack scenario
-
+Generator-B optionally supports an additional calibration_drift_attack class for future robustness research.
 ### Generator-B Variants
 
 #### Generator-B v1
@@ -137,6 +137,21 @@ Cross-generator evaluation showed substantial degradation compared with internal
 - Cross-generator evaluation exposed generator-specific learning behavior.
 - Robustness validation is necessary for realistic QKD forensic deployment assessment.
 
+### Generator-B Dataset Files
+
+qkd_generator_b_domain_shifted.csv
+- Full extreme domain-shift dataset.
+
+qkd_generator_b_filtered_testset.csv
+- Four-class filtered evaluation dataset for Generator-B v1.
+
+qkd_generator_b_v2_calibrated.csv
+- Calibrated moderate domain-shift dataset.
+
+qkd_generator_b_v2_filtered_testset.csv
+- Four-class filtered evaluation dataset for Generator-B v2.
+
+  
 ### Generator-B Repository Structure
 
 generator_b/
@@ -144,7 +159,7 @@ generator_b/
 ├── metadata/
 ├── scripts/
 └── results/
-
+Full Generator-B resources are available in the `generator_b/` directory.
 ### Reproducibility
 Generator-B includes:
 - dataset generation scripts
@@ -152,4 +167,4 @@ Generator-B includes:
 - robustness evaluation scripts
 - visualization scripts
 - reproducible robustness analysis workflow
-
+This repository now provides both a QKD forensic dataset and a cross-generator robustness benchmarking framework for QKD forensic machine learning research.
