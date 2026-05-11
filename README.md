@@ -76,3 +76,80 @@ https://github.com/MadhabCD/QKD-Forensic-Dataset
 Citation
 Please cite the dataset using the Zenodo DOI.
 Use the DOI shown on the Zenodo page for the official citation text.
+
+
+
+## Generator-B Robustness Validation Extension
+
+### Motivation
+The original QF-LOG dataset was generated using a single physics-informed synthetic generator (Generator-A). Although the initial machine learning models achieved high internal validation accuracy, robustness under unseen operational conditions remained uncertain.
+
+To address this limitation, Generator-B was developed as a domain-shifted QKD operational simulator for cross-generator forensic robustness evaluation.
+
+### Generator-B Features
+Generator-B introduces multiple operational variations and domain-shift factors, including:
+
+- unseen hardware profiles
+- detector calibration drift
+- varying fiber attenuation and loss
+- temporal operational noise
+- environmental instability
+- shifted photon-count distributions
+- shifted latency distributions
+- noisy QBER behavior
+- overlapping operational class boundaries
+- optional calibration_drift_attack scenario
+
+### Generator-B Variants
+
+#### Generator-B v1
+Extreme domain-shift scenario designed to stress-test forensic model robustness under severe operational drift.
+
+#### Generator-B v2
+Calibrated moderate domain-shift scenario designed to simulate more realistic deployment conditions while preserving operational uncertainty and class overlap.
+
+### Cross-Generator Robustness Evaluation
+
+Training dataset:
+- Generator-A
+
+Testing datasets:
+- Generator-B v1
+- Generator-B v2
+
+Models evaluated:
+- Random Forest
+- XGBoost
+
+Cross-generator evaluation showed substantial degradation compared with internal validation results, demonstrating that single-generator evaluation may overestimate forensic model robustness.
+
+| Test Dataset | RF Accuracy | XGBoost Accuracy |
+|---|---|---|
+| Generator-B v1 | 0.2591 | 0.2451 |
+| Generator-B v2 | 0.3358 | 0.2856 |
+
+### Main Findings
+
+- Internal validation alone overestimated robustness.
+- Latency distribution shift was the strongest degradation factor.
+- Photon-count drift significantly reduced class separability.
+- Detector-blind and fiber-tap attacks became highly overlapping under shifted operational conditions.
+- Cross-generator evaluation exposed generator-specific learning behavior.
+- Robustness validation is necessary for realistic QKD forensic deployment assessment.
+
+### Generator-B Repository Structure
+
+generator_b/
+├── data/
+├── metadata/
+├── scripts/
+└── results/
+
+### Reproducibility
+Generator-B includes:
+- dataset generation scripts
+- parameter metadata JSON files
+- robustness evaluation scripts
+- visualization scripts
+- reproducible robustness analysis workflow
+
